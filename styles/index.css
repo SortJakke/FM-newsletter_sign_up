@@ -1,0 +1,223 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(235, 18%, 26%);
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.container {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(234, 29%, 20%);
+  font-size: 16px;
+  width: 100%;
+}
+
+.attribution {
+  margin: 1em 0;
+  font-size: 11px;
+  text-align: center;
+  color: rgb(220, 220, 220);
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+#main {
+  display: grid;
+  gap: 2em;
+}
+#main .main__image-section {
+  width: 100%;
+}
+#main .main__image-section .main__image {
+  width: 100%;
+}
+#main .main__text-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 0 1.5em;
+}
+#main .main__text-section .main__heading {
+  font-size: 2.5em;
+}
+#main .main__text-section .main__paragraph {
+  line-height: 1.5em;
+}
+#main .main__text-section .main__list {
+  list-style: none;
+  list-style-position: inside;
+}
+#main .main__text-section .main__list .main__list--item {
+  position: relative;
+  padding-left: 2em;
+  margin-bottom: 1em;
+  line-height: 1.5em;
+}
+#main .main__text-section .main__list .main__list--item::before {
+  content: url(../images/icon-list.svg);
+  position: absolute;
+  left: 0;
+}
+#main .main__form-section {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5em;
+  margin-bottom: 2em;
+}
+#main .main__form-section .form__label {
+  font-size: 0.8em;
+  font-weight: 800;
+  margin-bottom: 0.8em;
+}
+#main .main__form-section .form__input {
+  font-family: "Roboto", sans-serif;
+  border-radius: 0.5em;
+  border: none;
+  padding: 1em 1.5em;
+  font-size: 1em;
+  margin-bottom: 1.5em;
+  border: 1px solid hsl(0, 0%, 58%);
+  outline: none;
+}
+#main .main__form-section .form__input:focus {
+  border: 2px solid #000;
+}
+#main .main__form-section .form__button {
+  font-family: "Roboto", sans-serif;
+  border-radius: 0.5em;
+  border: none;
+  padding: 1em 1.5em;
+  font-size: 1em;
+  background-color: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 400;
+}
+#main .main__form-section .form__button:hover {
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right,
+    hsl(350, 100%, 67%),
+    hsl(4, 100%, 67%),
+    hsl(12, 100%, 63%)
+  );
+}
+#main .form-error {
+  position: relative;
+}
+#main .form-error .form__input {
+  background-color: hsl(5, 100%, 95%);
+  border: 2px solid hsl(355, 84%, 68%);
+  color: hsl(355, 84%, 68%);
+}
+#main .form-error .form__error-message {
+  position: absolute;
+  top: 0;
+  right: 1.5em;
+  color: hsl(355, 84%, 68%);
+}
+
+@media screen and (min-width: 500px) {
+  #main {
+    margin: 1.5em 0;
+    border-radius: 2em;
+  }
+  #main .main__image-section {
+    padding: 0 1.5em;
+    padding-top: 1.5em;
+  }
+  #main .main__image-section .main__image {
+    border-radius: 1em;
+  }
+}
+@media screen and (min-width: 900px) {
+  #main {
+    max-height: 600px;
+    margin: 0;
+    padding: 1.5em;
+    border-radius: 2em;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "text image" "form image";
+    gap: 2em;
+  }
+  #main .main__image-section {
+    grid-area: image;
+    padding: 0;
+    text-align: right;
+  }
+  #main .main__image-section .main__image {
+    width: auto;
+    max-height: 100%;
+  }
+  #main .main__text-section {
+    width: 400px;
+    padding-top: 3em;
+    grid-area: text;
+  }
+  #main .main__form-section {
+    width: 400px;
+    grid-area: form;
+  }
+}
+#modal {
+  display: none;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5em;
+  padding-top: 8em;
+}
+#modal .modal__image {
+  width: 4em;
+  margin-bottom: 2em;
+}
+#modal .modal__heading {
+  font-size: 2.5em;
+  line-height: 1em;
+  margin-bottom: 1.5rem;
+}
+#modal .modal__paragraph {
+  line-height: 1.5em;
+  margin-bottom: 2em;
+}
+#modal .modal__button {
+  font-family: "Roboto", sans-serif;
+  border-radius: 0.5em;
+  border: none;
+  padding: 1em 1.5em;
+  font-size: 1em;
+  background-color: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 400;
+  margin-top: auto;
+}
+#modal .modal__button:hover {
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right,
+    hsl(350, 100%, 67%),
+    hsl(4, 100%, 67%),
+    hsl(12, 100%, 63%)
+  );
+}
+
+@media screen and (min-width: 500px) {
+  #modal {
+    width: 475px;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 3em;
+    border-radius: 2em;
+  }
+} /*# sourceMappingURL=index.css.map */

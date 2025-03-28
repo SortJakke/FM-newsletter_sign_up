@@ -1,0 +1,39 @@
+@import "./variables";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $Blue700;
+  font-family: $FontFamily;
+  font-weight: 400;
+
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.container {
+  background-color: $White;
+  color: $Blue800;
+  font-size: 16px;
+  width: 100%;
+}
+
+.attribution {
+  margin: 1em 0;
+  font-size: 11px;
+  text-align: center;
+  color: rgb(220, 220, 220);
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+@import "./main";
+@import "./modal";

@@ -1,0 +1,133 @@
+#main {
+  display: grid;
+  gap: 2em;
+
+  .main__image-section {
+    width: 100%;
+    .main__image {
+      width: 100%;
+    }
+  }
+  .main__text-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    padding: 0 1.5em;
+
+    .main__heading {
+      font-size: 2.5em;
+    }
+    .main__paragraph {
+      line-height: 1.5em;
+    }
+    .main__list {
+      list-style: none;
+      list-style-position: inside;
+
+      .main__list--item {
+        position: relative;
+        padding-left: 2em;
+        margin-bottom: 1em;
+        line-height: 1.5em;
+      }
+      .main__list--item::before {
+        content: url(../images/icon-list.svg);
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+  .main__form-section {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.5em;
+    margin-bottom: 2em;
+    .form__label {
+      font-size: 0.8em;
+      font-weight: 800;
+      margin-bottom: 0.8em;
+    }
+    .form__input {
+      font-family: $FontFamily;
+      border-radius: 0.5em;
+      border: none;
+      padding: 1em 1.5em;
+      font-size: 1em;
+
+      margin-bottom: 1.5em;
+      border: 1px solid $Grey;
+      outline: none;
+
+      &:focus {
+        border: 2px solid #000;
+      }
+    }
+    .form__button {
+      @include button_layout();
+    }
+  }
+
+  .form-error {
+    position: relative;
+    .form__input {
+      background-color: $ErrorBG;
+      border: 2px solid $ErrorColor;
+      color: $ErrorColor;
+    }
+    .form__error-message {
+      position: absolute;
+      top: 0;
+      right: 1.5em;
+      color: $ErrorColor;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  #main {
+    margin: 1.5em 0;
+    border-radius: 2em;
+    .main__image-section {
+      padding: 0 1.5em;
+      padding-top: 1.5em;
+      .main__image {
+        border-radius: 1em;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #main {
+    max-height: 600px;
+    margin: 0;
+    padding: 1.5em;
+    border-radius: 2em;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "text image"
+      "form image";
+    gap: 2em;
+
+    .main__image-section {
+      grid-area: image;
+      padding: 0;
+      text-align: right;
+      .main__image {
+        width: auto;
+        max-height: 100%;
+      }
+    }
+    .main__text-section {
+      width: 400px;
+      padding-top: 3em;
+      grid-area: text;
+    }
+    .main__form-section {
+      width: 400px;
+      grid-area: form;
+    }
+  }
+}

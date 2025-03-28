@@ -1,0 +1,28 @@
+$Orange: hsl(12, 100%, 63%);
+$Red: hsl(4, 100%, 67%);
+$Pink: hsl(350, 100%, 67%);
+$Blue800: hsl(234, 29%, 20%);
+$Blue700: hsl(235, 18%, 26%);
+$Grey: hsl(0, 0%, 58%);
+$White: hsl(0, 0%, 100%);
+
+$ErrorBG: hsl(5, 100%, 95%);
+$ErrorColor: hsl(355, 84%, 68%);
+
+$FontFamily: "Roboto", sans-serif;
+
+@mixin button_layout() {
+  font-family: $FontFamily;
+  border-radius: 0.5em;
+  border: none;
+  padding: 1em 1.5em;
+  font-size: 1em;
+  background-color: $Blue800;
+  color: $White;
+  font-weight: 400;
+
+  &:hover {
+    cursor: pointer;
+    background-image: linear-gradient(to right, $Pink, $Red, $Orange);
+  }
+}
